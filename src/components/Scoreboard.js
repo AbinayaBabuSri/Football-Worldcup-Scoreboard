@@ -19,9 +19,19 @@ const Scoreboard = () => {
   const [error, setError] = useState('');
 
   const startGame = () => {
+  const existingMatch =  onGoingMatches.filter((match) =>
+    ((match.homeTeam.toLowerCase() === homeTeam.toLowerCase() || 
+      match.homeTeam.toLowerCase() === awayTeam.toLowerCase()) 
+    && (match.awayTeam.toLowerCase() === homeTeam.toLowerCase()||
+      match.awayTeam.toLowerCase() === awayTeam.toLowerCase()) )
+      );
+
     if(!homeTeam || !awayTeam){
         setError('Please enter Home Team & Away Team');
         return;
+    }else if(existingMatch.length > 0){
+      setError('A match between these two teams is already in progress. You can start a new match once the current one is finished');
+      return;
     }
     const newMatch = {
       id: allMatches.length + 1,
@@ -77,7 +87,7 @@ const Scoreboard = () => {
 
   const finishMatch = () => {
     if (!selectedMatchId) {
-      setError('Please select a match to finish.');
+      setError('Please select a match to finish');
       return;
     }
 
