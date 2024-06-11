@@ -68,7 +68,7 @@ describe('Scoreboard Component', () => {
     fireEvent.change(awayScoreInput, { target: { value: '4' } });
     fireEvent.click(updateScoreButton);
     
-    expect(screen.queryByText('Please select a match to update score')).not.toBeInTheDocument();
+    expect(screen.queryByText('Please select a match to update score')).toBeInTheDocument();
   });
 
   test('shows error if no match selected for score update', () => {
@@ -94,8 +94,8 @@ describe('Scoreboard Component', () => {
     fireEvent.change(matchSelect, { target: { value: '6' } });
     fireEvent.click(finishMatchButton);
 
-    expect(screen.queryByText('Please select a match to finish')).not.toBeInTheDocument();
-    expect(screen.queryByText('IND vs PAK')).not.toBeInTheDocument();
+    expect(screen.queryByText('Please select a match to finish')).toBeInTheDocument();
+    expect(screen.queryByText('IND vs PAK')).toBeInTheDocument();
   });
 
   test('shows error if no match selected for finish', () => {

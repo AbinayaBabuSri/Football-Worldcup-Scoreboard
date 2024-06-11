@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const Scoreboard = () => {
-  const [onGoingMatches, setOnGoingMatches] = useState([
-    { id: 1, homeTeam: 'Uruguay', awayTeam: 'Italy', homeScore: 6, awayScore: 6 },
-    { id: 2, homeTeam: 'Spain', awayTeam: 'Brazil', homeScore: 10, awayScore: 2 },
-    { id: 3, homeTeam: 'Mexico', awayTeam: 'Canada', homeScore: 0, awayScore: 5 },
-    { id: 4, homeTeam: 'Argentina', awayTeam: 'Australia', homeScore: 3, awayScore: 1 },
-    { id: 5, homeTeam: 'Germany', awayTeam: 'France', homeScore: 2, awayScore: 2 }
-  ]);
+  const [onGoingMatches, setOnGoingMatches] = useState([]);
   const [allMatches, setAllMatches] = useState([...onGoingMatches]);
   const [homeTeam, setHomeTeam] = useState('');
   const [awayTeam, setAwayTeam] = useState('');

@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Football World Cup Scoreboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React application which allows user to create, display and manage footbal matches. They can create, update , finish matches and can get Summary of the matches.
+
+## Installation
+
+1. Clone the repository:
+   git clone https://github.com/AbinayaBabuSri/football-worldcup-scoreboard.git
+   
+   cd football-scoreboard
+2. Install dependencies:
+    ### `npm install`
 
 ## Available Scripts
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Start the development server: 
+    ### `npm start`
+2. Open your browser and navigate to: http://localhost:3000
+    
+    The page will reload when you make changes.
+    You may also see any lint errors in the console.
+3. You will see the Football World Cup Scoreboard interface where you can start new    matches, update scores, finish matches, and get the summary.
 
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Notes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Entering the team names and clicking the `Start Game` button will create a new match, which will then appear in both the match dropdown and the summary.
+2. After selecting a match from the dropdown, users can update the scores and save them by clicking the `Update Score` button.
+3. To conclude a match, click the `Finish Game` button. Note that updating the team scores and then clicking the `Finish Game` button will not save the updated scores.
+4. Upon finishing a game, the match will be removed from the dropdown but will remain visible in the summary section.
+5. To view the summary of all matches, click the `Get Summary` button. Matches will be sorted by the highest total score, and if multiple matches have the same total score, ongoing matches will be listed at the top.
+6. Error messages will be displayed if the `Start Game` button is clicked without entering team names, or if the `Update Score` or `Finish Game` buttons are clicked without selecting a match.
+7. If a match is already in progress, attempting to start a new match with the same teams will result in an error message. A new match with the same teams can only be started once the ongoing match is finished.
