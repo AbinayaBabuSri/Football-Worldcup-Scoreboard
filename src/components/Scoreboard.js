@@ -33,8 +33,7 @@ const Scoreboard = () => {
       awayTeam: awayTeam,
       homeScore: 0,
       awayScore: 0,
-      startTime: new Date().getTime(),
-      finishedTime: null
+      startTime: new Date().getTime()
     };
     setAllMatches([...allMatches, newMatch]);
     setOnGoingMatches([...onGoingMatches, newMatch]);
@@ -89,8 +88,7 @@ const Scoreboard = () => {
     const updatedAllMatches = allMatches.map(match => {
       if (match.id === parseInt(selectedMatchId)) {
         return {
-          ...match,
-          finishedTime: new Date().getTime()
+          ...match
         };
       }
       return match;
